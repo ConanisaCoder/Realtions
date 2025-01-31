@@ -58,6 +58,47 @@ def solve_sys_eqau_simple(b_val,m_val,m_val2,b_val2):
     if x == float:
         x = Fraction(x)
     return f"({x},{y})"
+def Forms_of_Linear_Eqau(y_1,y_2,x_1,x_2):
+    print("Options\n(1) Point-Slope Form\n(2) Slope-Intercept Form\n(3) Standard Form\n(4) All Three")
+    while True:
+        try: 
+            option = int(input("Enter option: "))
+            break
+        except ValueError:
+            print("Enter Int")
+    if option == 1:
+        slope = (y_2 - y_1) / (x_2 - x_1)
+        return f" (y  - {y_1}) = {slope}(x - {x_1}) "
+    if option == 2: 
+        slope = (y_2 - y_1) / (x_2 - x_1)
+        b = (slope *x_1) -y_1 
+        return f"y = {slope}x + {b}"
+    if option == 3:
+        slope = (y_2 - y_1) / (x_2 - x_1)
+        slope *= -1
+        b = (slope *x_1) -y_1 
+        return f"y + {slope}x = {b}"
+    if option == 4:
+        list_ret = []
+        slope = (y_2 - y_1) / (x_2 - x_1)
+        list_ret.append(f" (y  - {y_1}) = {slope}(x - {x_1}) ")
+        slope = (y_2 - y_1) / (x_2 - x_1)
+        b = (slope *x_1) -y_1 
+        list_ret.append(f"y = {slope}x + {b}")
+        slope = (y_2 - y_1) / (x_2 - x_1)
+        slope *= -1
+        b = (slope *x_1) -y_1 
+        list.ret.append(f"y + {slope}x = {b}")
+        return "\n".join(list_ret)
+
+def find_lin_eqau_val(y_1,y_2,x_1,x_2):
+    
+    pass
+    list_value = []
+    slope = (y_2 - y_1) / (x_2 - x_1)
+    y-intercept = (slope *x_1) -y_1 
+    if slope < 0:
+        list_value.append()
 '''
 Fuctions to verify Shape
 def verify_triangle_tpye(point1x,point1y,point2x,point2y,point3x,point3y):
